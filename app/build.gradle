@@ -44,6 +44,5 @@ dependencies {
     api rootProject.ext.dependencies.SmartRefreshLayout
     api rootProject.ext.dependencies.banner
     api rootProject.ext.dependencies.arouter_api
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     annotationProcessor rootProject.ext.dependencies.arouter_compiler
 }

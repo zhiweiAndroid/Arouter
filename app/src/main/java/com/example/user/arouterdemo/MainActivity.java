@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn1:
-                ARouter.getInstance().build("/demo/main2").withString("name","zitan").navigation(this, new NavigationCallback() {
+                ARouter.getInstance().build("/demo/main3","main").withString("name","zitan").navigation(this, new NavigationCallback() {
                     @Override
                     public void onFound(Postcard postcard) {
                         Log.e("NavigationCallback", "onFound: 找到了 ");
@@ -49,7 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     @Override
                     public void onArrival(Postcard postcard) {
-                        Log.e("NavigationCallback", "onArrival: 跳转完了 ");
+                        String group = postcard.getGroup();
+                        Log.e("navigation", "onArrival: "+group);
                     }
 
                     @Override
